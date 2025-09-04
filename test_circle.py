@@ -66,6 +66,11 @@ class test_circle(unittest.TestCase):
         self.assertEqual(round(c.getCircumference(), 2), 1.26)
 
 
-
-
+    def test_equation_for_radius(self):
+        pi = math.pi
+        c = Circle(5/pi)
+        self.assertEqual(c.getCircumference(), 10)
+        
+        c.setRadius(6/math.sqrt(pi))
+        self.assertEqual(c.getArea(), 36)
 
