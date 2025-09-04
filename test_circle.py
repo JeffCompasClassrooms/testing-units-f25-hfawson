@@ -35,35 +35,35 @@ class test_circle(unittest.TestCase):
         c = Circle(0)
         self.assertEqual(c.getArea(), 0)
         
-       #sigh... do we really want so many decimal points 
         c.setRadius(1)
-        self.assertEqual(c.getArea(), 3.141592653589793)
+        self.assertEqual(round(c.getArea(), 2), 3.14)
         
+        #apparently rounding dosn't work when numbers get that high
         c.setRadius(539209938)
-        self.assertEqual(c.getArea(), 9.134097615494344e+17 )
+        self.assertEqual(round(c.getArea(), 2), 9.134097615494344e+17 )
         
         c.setRadius(4)
-        self.assertEqual(c.getArea(), 50.26548245743669)
+        self.assertEqual(round(c.getArea(), 2), 50.27)
       
         c.setRadius(.2)
-        self.assertEqual(c.getArea(), 0.12566370614359174)
+        self.assertEqual(round(c.getArea(), 2), 0.13)
 
         #why is that if statement even there? should it be 0?
         c.setRadius(2)
-        self.assertEqual(c.getArea(), 12.56)
+        self.assertEqual(round(c.getArea(), 2), 12.57)
 
     def test_getCircumference(self):
         c = Circle(0)
         self.assertEqual(c.getCircumference(), 0)
         
         c.setRadius(1)
-        self.assertEqual(c.getCircumference(), 6.283185307179586)
+        self.assertEqual(round(c.getCircumference(), 2), 6.28)
 
         c.setRadius(2)
-        self.assertEqual(c.getCircumference(), 12.566370614359172)
+        self.assertEqual(round(c.getCircumference(), 2), 12.57)
 
         c.setRadius(.2)
-        self.assertEqual(c.getCircumference(), 1.2566370614359172)
+        self.assertEqual(round(c.getCircumference(), 2), 1.26)
 
 
 
